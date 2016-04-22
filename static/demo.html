@@ -31,13 +31,12 @@
           <h4>Based on research published in <a href="http://arxiv.org/pdf/1602.04506v1.pdf">this paper.</a></h4>
           
           <div class="text">Our goal will be to separate a set of dog images from the images on the right. When you click play, a random set of images will be flashed in front of you. Press a spacebar whenever you see a dog.</div>
-          <div class="text">Don't worry about reacting late, our model accounts for worker delays and will attempt to pick out the correct dog images. Everytime you do the task, the model will update its belief of what dogs look like and will move the most likely dog images to the top. The model will also print precision and recall curves at the bottom so you can track your progress.</div>
           <div class="slide-show-area" id="preview">
             <div class="slide-show" id="slideShow">
               <div class="slideImages" id="slideImagesID"></div>
             </div>
             <div class="slideShow-controller" id="slideControllerID">
-              <a href="#" id="togglePlay">Play</a>
+              <a href="#" id="togglePlay">Start</a>
             </div>
           </div>
           <div id="film_strip" class="container row" style="height:150px; width: 100%; margin:auto; padding: 10px; border:solid 5px white">
@@ -46,11 +45,12 @@
         </div>
         <div id="stats" class="row" style="padding-top: 10px; border-top: thick double #eee;">
           <div class="text">Current Precision @ <span class="totalPositives"></span>: <span style="color:red;" class="current-precision"></span>, Recall @ <span class="totalPositives"></span>: <span style="color:red;" class="current-recall"></span></div>
+          <div class="text">Don't worry about reacting late, our model accounts for worker delays and will attempt to pick out the correct dog images. Every time you do the task, the model will move the most likely dog images to the top. The model will also print precision and recall curves at the bottom so you can track your progress.</div>
           <div id="precision" class="col-md-12">
           </div>
           <div id="recall" class="col-md-12">
           </div>
-          <div class="text">Everytime you do the task, the scores for the images are updated and a new precision and recall curve is drawn. So far, you have done <span class="redundancy-count"></span> tasks.</div>
+          <div class="text">Every time you do the task, the scores for the images are updated and a new precision and recall curve is drawn. So far, you have done <span class="redundancy-count"></span> tasks.</div>
         </div>
       </div>
       <div style="padding-top: 10px; border-left: thick double #eee;" class="col-md-4" id="images">

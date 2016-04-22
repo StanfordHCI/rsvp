@@ -189,7 +189,7 @@ SlideShow.prototype.init = function(){
     },
 
     activeSpaceData : function(){
-      $('body').keydown(function(event) {
+      var keyPressEvent = function(event) {
         if ( event.keyCode == widget.config.keyCode) {
           if (widget.currentImgNumb < 10)
             return;
@@ -213,6 +213,10 @@ SlideShow.prototype.init = function(){
             $('#captured_images').append(img);
           }                            
         }    
+      };
+      $('body').addEventListener("touchend", keyPressEvent, false);
+      $('body').keydown(function(event) {
+        keyPressEvent(event);
       });
     }
   };
@@ -271,7 +275,7 @@ SlideShow.prototype.runSlideShow = function(){
     }
 
     var play = $('#togglePlay');
-    play.html('Play Again');
+    play.html('Start Another Round');
     play.removeClass('disable');
     spaceTimeArr = widget.spaceData;
     imageTimeArr = widget.slideData.slice(10);
