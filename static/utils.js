@@ -65,13 +65,13 @@ function addImagesRandomly(elem, sortedKeys, numImages){
   }
   imageOrder = shuffle(imageOrder);
   html = '';
-  for (var i = 10; i >=1; i--) {
-    c_url = "https://visualgenome.org/static/images/countdown/countdown_" + i + ".png";
+  for (var i = 9; i >= 0; i--) {
+    c_url = "https://visualgenome.org/static/images/countdown/countdown_" + i + ".jpg";
     sortedImages.push(c_url);
-    html = html + "<img class='countdown' src=\""+c_url+"\" alt=\"slide image\" height='100%' width='auto'>"
+    html = html + "<img class='countdown slider-images' src=\""+c_url+"\" alt=\"slide image\" height='100%' width='auto'>"
   }
   for (var i=0; i < imageOrder.length; i++){
-    html = html + "<img src=\""+subset[imageOrder[i]]+"\" alt=\"slide image\">";
+    html = html + "<img class='slider-images' src=\""+subset[imageOrder[i]]+"\" alt=\"slide image\">";
     sortedImages.push(subset[imageOrder[i]]);
   }
   document.getElementById(elem).innerHTML =html;
@@ -190,7 +190,7 @@ SlideShow.prototype.init = function(){
 
     activeSpaceData : function(){
       var keyPressEvent = function(event) {
-        if ( event.keyCode == widget.config.keyCode) {
+        if (event.type == 'touchend' || event.keyCode == widget.config.keyCode) {
           if (widget.currentImgNumb < 10)
             return;
           yodata = Date.now();
