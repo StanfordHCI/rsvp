@@ -214,7 +214,7 @@ SlideShow.prototype.init = function(){
           }                            
         }    
       };
-      $('body').addEventListener("touchend", keyPressEvent, false);
+      document.getElementById('body').addEventListener("touchend", keyPressEvent, false);
       $('body').keydown(function(event) {
         keyPressEvent(event);
       });
