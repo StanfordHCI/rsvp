@@ -33,8 +33,8 @@ function renderGraph(precisionData, recallData, redundancy, positiveClass, data,
   }
   $('#precision').html('');
   $('#recall').html('');
-  plotGraph(precisionData, 'precision');
-  plotGraph(recallData, 'recall');
+  plotGraph(precisionData, 'precision', $('#precision').width());
+  plotGraph(recallData, 'recall', $('#recall').width());
 }
 
 function getRandomImageSubset(sortedKeys, numImages) {

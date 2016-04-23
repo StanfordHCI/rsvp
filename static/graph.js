@@ -1,6 +1,6 @@
-function plotGraph(data, divId) {
+function plotGraph(data, divId, w) {
   var margin = {top: 20, right: 100, bottom: 30, left: 30},
-      width = 590 - margin.left - margin.right,
+      width = w - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
