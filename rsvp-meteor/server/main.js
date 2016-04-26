@@ -1,4 +1,4 @@
-import '../myfiles/data.js'
+import '../imports/api/data.js'
 
 //Meteor.startup(() => {});
 

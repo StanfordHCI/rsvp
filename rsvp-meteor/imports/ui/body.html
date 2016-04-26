@@ -30,13 +30,11 @@
         </div>
       </div>
       <div style="padding-top: 10px; border-left: thick double #eee;" class="col-md-4" id="images">
+        {{#each images}}
+          {{> image}}
+        {{/each}}
       </div>
     </div>
   </div>
-  <!--script src="../../static/vars.js"></script>
-  <script src="../../static/utils.js"></script>
-  <script src="../../static/graph.js"></script>
-  <script src="../../static/data.js"></script>
-  <script src="../../static/demo.js"></script-->
 </body>
 

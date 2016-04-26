@@ -1,1 +1,1 @@
-import '../myfiles/demo.js'
+import '../imports/ui/body.js'
