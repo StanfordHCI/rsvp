@@ -1,0 +1,1 @@
+import '../myfiles/demo.js'
