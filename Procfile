@@ -1,1 +1,1 @@
-web: gunicorn rsvp_responsive.wsgi --log-file -
+web: gunicorn rsvp_demo.wsgi --log-file -

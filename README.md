@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Embracing Error to Enable Rapid Crowdsourcing
 ==================================
 
@@ -9,6 +10,3 @@ Running the static demo
 To run, the demo, go to the `static` folder and open `demo.html` on your browser.
 
 
-Running the meteor demo
-=====================
-Under progress
