@@ -100,6 +100,49 @@ function updateScores(data, sortedImages, spaceTimeArr, imageTimeArr) {
   }
 }
 
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie != '') {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = jQuery.trim(cookies[i]);
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) == (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+
+function updateDatabase(data, sortedImages, spaceTimeArr, imageTimeArr) {
+  var images_index = 0;
+  var clicked_index = 0;
+  updateData = {};
+  while (images_index < imageTimeArr.length && clicked_index < spaceTimeArr.length) {
+    if (spaceTimeArr[clicked_index] > imageTimeArr[images_index]) {
+      images_index++;
+    } else {
+      for (var back = 1; back < 5; back++) {
+        if (images_index-back >= 0) {
+          url = sortedImages[images_index-back+10];
+          if (!(url in updateData)) {
+            updateData[url] = 0;
+          }
+          updateData[url] += gaussian(mean, variance, spaceTimeArr[clicked_index]-imageTimeArr[images_index-back]);
+        }
+      }
+      clicked_index++;
+    }
+  }
+  var csrftoken = getCookie('csrftoken');
+  $.post('/update', {
+    "data": updateData,
+    'csrfmiddlewaretoken': csrftoken  
+  });
+}
+
 function step() {
   sortedKeys = getSortedKeys(data);
   renderImages(sortedKeys, totalPositives);
@@ -281,6 +324,7 @@ SlideShow.prototype.runSlideShow = function(){
     imageTimeArr = widget.slideData.slice(10);
     redundancy++;
     updateScores(data, sortedImages, spaceTimeArr, imageTimeArr);
+    updateDatabase(data, sortedImages, spaceTimeArr, imageTimeArr);
     step();
     reset_data();
     return true;

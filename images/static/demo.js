@@ -1,4 +1,5 @@
 totalPositives = 0;
+var data = JSON.parse($('#data').val());
 for (var url in data) {
   elem = data[url];
   if (elem['class'] == positiveClass) {

@@ -1,4 +1,4 @@
-{{load static }}
+{% load static %}
 <html>
 <head>
   <meta charset="utf-8">
@@ -16,24 +16,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <!-- D3 js-->
-  <link rel="stylesheet" href="graph.css">
+  <link rel="stylesheet" href="{% static 'graph.css' %}">
   <script src="https://d3js.org/d3.v3.min.js"></script>
 
   <!-- Underscore -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
   <!-- preloader -->
-  <link rel="stylesheet" href="jpreloader.css">
-  <link rel="stylesheet" href="demo.css">
-  <script src="jpreloader.js"></script>
+  <link rel="stylesheet" href="{% static 'jpreloader.css' %}">
+  <link rel="stylesheet" href="{% static 'demo.css' %}">
+  <script src="{% static 'jpreloader.js' %}"></script>
 </head>
 <body id='body' style="">
+  <input type='hidden' id='data' value='{{ data }}'/>
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <div id="task">
           <h2>Embracing Error to Enable Rapid Crowdsourcing</h2>
           <h4>Based on research published in <a href="http://arxiv.org/pdf/1602.04506v1.pdf">this paper.</a></h4>
+          <h4>To view the aggregated results of everyone's work, <a href="/results">click here</a></h4>
 
           <div class="text">Our goal will be to separate a set of dog images from the images on the right. When you click play, a random set of images will be flashed in front of you. Press the spacebar whenever you see a dog. Mobile users can click anywhere on the screen when the slideshow starts.</div>
           <div class="slide-show-area" id="preview">
@@ -62,10 +64,9 @@
       </div>
     </div>
   </div>
-  <script src="vars.js"></script>
-  <script src="utils.js"></script>
-  <script src="graph.js"></script>
-  <script src="data.js"></script>
-  <script src="demo.js"></script>
+  <script src="{% static 'vars.js' %}"></script>
+  <script src="{% static 'utils.js' %}"></script>
+  <script src="{% static 'graph.js' %}"></script>
+  <script src="{% static 'demo.js' %}"></script>
 </body>
 </html>
