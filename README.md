@@ -14,3 +14,10 @@ Running the Django demo
 =====================
 The Django code aggregates multiples users results into a centralized database. The code is available in the `images` directory.
 The images are stored in `data.json`. It is also available to use on [this website](http://rsvp-demo.herokuapp.com).
+
+
+Contact
+====================
+If you have questions, feel free to contact me:
+Twitter: [@ranjaykrishna](https://twitter.com/ranjaykrishna)
+Website: [Ranjay Krishna](http://ranjaykrishna.com)
