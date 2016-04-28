@@ -3,7 +3,7 @@ from django.db import models
 class Image(models.Model):
   url = models.URLField(unique=True)
   cls = models.CharField(max_length=50)
-  score = models.IntegerField()
+  score = models.FloatField()
 
   def tojson(self, mask=False):
     if mask:
