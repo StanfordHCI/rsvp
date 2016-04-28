@@ -13,5 +13,4 @@ To run, the demo, go to the `static` folder and open `demo.html` on your browser
 Running the Django demo
 =====================
 The Django code aggregates multiples users results into a centralized database. The code is available in the `images` directory.
-The images are stored in `data.json`. It is also available to use on [this website](rsvp-demo.herokuapp.com).
-
+The images are stored in `data.json`. It is also available to use on [this website](http://rsvp-demo.herokuapp.com).
