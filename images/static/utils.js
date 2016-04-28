@@ -137,9 +137,12 @@ function updateDatabase(data, sortedImages, spaceTimeArr, imageTimeArr) {
     }
   }
   var csrftoken = getCookie('csrftoken');
-  $.post('/update', {
-    "data": updateData,
-    'csrfmiddlewaretoken': csrftoken  
+  $.ajax({
+    'url':'/update', 
+    'type': 'POST',
+    'data': 'scores=' + JSON.stringify(
+      updateData
+    ),
   });
 }
 

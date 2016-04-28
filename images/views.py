@@ -25,10 +25,10 @@ def Data(request):
 def Update(request):
   if request.method != 'POST':
     return
-  data = request.POST['data']
-  print data
+  data = json.loads(request.POST['scores'])
   for d in data:
     image = Image.objects.get(url=d)
     image.score += data[d]
-    #image.save()
+    image.save()
+  return HttpResponse({})
 
