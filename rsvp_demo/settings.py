@@ -2,8 +2,7 @@
 Django settings for rsvp_demo project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.8/topics/settings/
+For more information on this file, see https://docs.djangoproject.com/en/1.8/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
@@ -15,7 +14,7 @@ import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
