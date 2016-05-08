@@ -19,9 +19,9 @@ var main = function(data) {
   recalldata = []
   renderGraph(precisionData, recallData, 0, positiveClass, data, sortedKeys, totalPositives);
   //$('.redundancy-count').text(redundancy);
-  $('.totalPositives').text(totalPositives);
-  $('.current-precision').text(precisionData[0][totalPositives-1])
-  $('.current-recall').text(recallData[0][totalPositives-1])
+  $('.metrics-at').text(metricsAt);
+  $('.current-precision').text(precisionData[0][metricsAt-1])
+  $('.current-recall').text(recallData[0][metricsAt-1])
 }
 
 var update = function() {

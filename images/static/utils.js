@@ -119,6 +119,16 @@ function getCookie(name) {
 function updateDatabase(data, sortedImages, spaceTimeArr, imageTimeArr) {
   var images_index = 0;
   var clicked_index = 0;
+  max_precision = 0;
+  for (var i = 0; i < precisionData.length-1; i++) {
+    if (precisionData[i][totalPositives] > max_precision) {
+      max_precision = precisionData[i][totalPositives];
+    }
+  }
+  if (precisionData[redundancy][totalPositives] < max_precision) {
+    console.log('not updating database with low precision');
+    return;
+  }
   updateData = {};
   while (images_index < imageTimeArr.length && clicked_index < spaceTimeArr.length) {
     if (spaceTimeArr[clicked_index] > imageTimeArr[images_index]) {
@@ -152,9 +162,9 @@ function step() {
   renderGraph(precisionData, recallData, redundancy, positiveClass, data, sortedKeys, totalPositives);
   sortedImages = addImagesRandomly('slideImagesID', sortedKeys, numImagesPerTask);
   $('.redundancy-count').text(redundancy);
-  $('.totalPositives').text(totalPositives);
-  $('.current-precision').text(precisionData[redundancy][totalPositives-1])
-  $('.current-recall').text(recallData[redundancy][totalPositives-1])
+  $('.metrics-at').text(metricsAt);
+  $('.current-precision').text(precisionData[redundancy][metricsAt-1])
+  $('.current-recall').text(recallData[redundancy][metricsAt-1])
 }
 
 // SLIDESHOW CODE
@@ -327,8 +337,8 @@ SlideShow.prototype.runSlideShow = function(){
     imageTimeArr = widget.slideData.slice(10);
     redundancy++;
     updateScores(data, sortedImages, spaceTimeArr, imageTimeArr);
-    updateDatabase(data, sortedImages, spaceTimeArr, imageTimeArr);
     step();
+    updateDatabase(data, sortedImages, spaceTimeArr, imageTimeArr);
     reset_data();
     return true;
   }
