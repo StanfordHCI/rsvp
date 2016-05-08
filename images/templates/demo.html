@@ -35,10 +35,10 @@
         <div id="task">
           <h2>Embracing Error to Enable Rapid Crowdsourcing</h2>
           <h4>Based on research published in <a href="https://arxiv.org/pdf/1602.04506v1.pdf">this paper.</a></h4>
-          <h4>To view the aggregated results of everyone's work, <a href="/results">click here</a></h4>
+          <!--h4>To view the aggregated results of everyone's work, <a href="/results">click here</a></h4-->
           <h4>Code for this project is available in <a href="https://github.com/stanfordhci/rsvp">this repository</a></h4>
 
-          <div class="text">Our goal will be to separate a set of dog images from the images on the right. When you click play, a random set of images will be flashed in front of you. Press the spacebar whenever you see a dog. Mobile users can click anywhere on the screen when the slideshow starts.</div>
+          <div class="text">Our goal will be to separate a set of <span class="positiveClass"></span> images from the images on the right. When you click play, a random set of images will be flashed in front of you. Press the spacebar whenever you see a <span class="positiveClass"></span>. Mobile users can click anywhere on the screen when the slideshow starts.</div>
           <div class="slide-show-area" id="preview">
             <div class="slide-show" id="slideShow">
               <div class="slideImages" id="slideImagesID"></div>
@@ -53,7 +53,7 @@
         </div>
         <div id="stats" class="row" style="padding-top: 10px; border-top: thick double #eee;">
           <div class="text">Current Precision @ <span class="metrics-at"></span>: <span style="color:red;" class="current-precision"></span>, Recall @ <span class="metrics-at"></span>: <span style="color:red;" class="current-recall"></span></div>
-          <div class="text">Don't worry about reacting late, our model accounts for worker delays and will attempt to pick out the correct dog images. Every time you do the task, the model will move the most likely dog images to the top. The model will also print precision and recall curves at the bottom so you can track your progress.</div>
+          <div class="text">Don't worry about reacting late, our model accounts for worker delays and will attempt to pick out the correct <span class="positiveClass"></span> images. Every time you do the task, the model will move the most likely <span class="positiveClass"></span> images to the top. The model will also print precision and recall curves at the bottom so you can track your progress.</div>
           <div id="precision" class="col-md-12">
           </div>
           <div id="recall" class="col-md-12">

@@ -1,5 +1,6 @@
 // Global Variables
 positiveClass = 'dogs';
+$('.positiveClass').text('man-riding-motorcycle');
 precisionData = [];
 recallData = [];
 redundancy = 0;
