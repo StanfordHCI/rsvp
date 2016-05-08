@@ -5,7 +5,7 @@ import json
 
 class Command(BaseCommand):
   def handle(self, *args, **options):
-    f = open('data.json')
+    f = open('man_riding_motorcycle.json')
     data = json.load(f)
     f.close()
     Image.objects.all().delete()
