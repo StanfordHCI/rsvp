@@ -42,7 +42,7 @@ def Resutls(request):
 
 
 def Data(request):
-  if 'augmented' in request.GET and request.GET['augmented'] == 'false':
+  if 'augmented' in request.GET and str(request.GET['augmented']) != 'False':
     data = getAugmentedData()
   else:
     data = Image.objects.all()
