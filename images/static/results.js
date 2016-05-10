@@ -26,10 +26,12 @@ var main = function(data) {
 
 var update = function() {
   console.log('updating');
+  augmented = $('#augmented').val();
   $.ajax({
     type: "get",
     url: "/data",
     dataType: 'json',
+    data:{'augmented': augmented},
     success: function(data) {
       main(data);
     }
